@@ -79,9 +79,18 @@ WSGI_APPLICATION = 'projeto.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
+    #    'default': {
+    #        'ENGINE': 'django.db.backends.sqlite3',
+    #        'NAME': BASE_DIR / 'db.sqlite3',
+    #    }
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        "ENGINE": "mssql",
+        "NAME": "Django-Recipes",
+        "USER": "SA",
+        "PASSWORD": "mar8c2l9",
+        "HOST": "localhost",
+        "PORT": "1433",
+        "OPTIONS": {"driver": "ODBC Driver 17 for SQL Server"},
     }
 }
 
@@ -129,3 +138,6 @@ STATIC_ROOT = BASE_DIR/'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+MEDIA_URL = '/media/'
+STATIC_ROOT = BASE_DIR/'media/'
